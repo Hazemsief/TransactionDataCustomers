@@ -9,12 +9,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const fetchData = async () => {
     try {
-      const [transactionResult, customeresResut] = await Promise.all([
-        axios.get('https://my-json-server.typicode.com/your-username/db/transactions'),
-        axios.get('https://my-json-server.typicode.com/your-username/db/customers')
+      const [transactionResult, customeresResult] = await Promise.all([
+        axios.get('https://my-json-server.typicode.com/Hazemsief/TransactionDataCustomers/transactions'),
+        axios.get('https://my-json-server.typicode.com/Hazemsief/TransactionDataCustomers/customers')
       ]);
       transactionsData = transactionResult.data;
-      customersData = customeresResut.data;
+      customersData = customeresResult.data;
       renderTable(transactionsData);
     } catch (error) {
       console.error('Error fetching data:', error);
